@@ -1,0 +1,39 @@
+<%= form_with model: @product do |form| %>
+  <% @product.errors.full_messages.each do |error| %>
+    <div>
+      <%= error %>
+    </div>
+  <% end %>
+<div class="card container-fluid" style="max-width:420px;">
+  <div class="card-body container-fluid">
+    <h5 class="card-title container-fluid">¡Agrega un nuevo producto al catálogo!</h5>
+<div class="section-title">
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, class:"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all.order(name: :asc), :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :photo %>
+    <%= form.file_field :photo %>
+  </div>
+
+  <%= form.submit %>
+</div>
+</div>
+<% end %>

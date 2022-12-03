@@ -1,0 +1,9 @@
+<div class="section-title">
+    <h2>Bloqueo.</h2>
+<p>¡Hola! <%= @resource.email %>!</p>
+
+<p>Lamentamos informarte que tu cuenta ha sido bloqueada debido a un número excesivo de intentos.</p>
+
+<p>Presiona aquí para desbloquear tu cuenta:</p>
+
+<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>

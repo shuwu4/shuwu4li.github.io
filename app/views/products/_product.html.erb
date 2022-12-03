@@ -1,0 +1,19 @@
+
+<div class="container">
+<div class="card-deck">
+<div class="card" style="max-width:319px;">
+  <%= image_tag product.photo, width: 180 if product.photo.attached?%>
+  <div class="card-body">
+    <h2 class="card-title"><%= product.title %></h2>
+    <p class="card-text"><%= product.price %>$.</p>
+
+  <div class="card-body">
+    <a href="#" class="card-link">Añada al carrito</a>
+    <%= link_to product_path(product), class: 'product', 'data-turbo-frame': '_top' do %>
+    <span>Ver producto</span>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+<% end %>

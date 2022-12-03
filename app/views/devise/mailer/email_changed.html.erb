@@ -1,0 +1,8 @@
+<div class="section-title">
+<p>Hola <%= @email %>!</p>
+</div>
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>Nos ponemos en contacto contigo para notificarte que tu correo electrónico se va a cambiar a <%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p>Nos ponemos en contacto contigo para notificarte que tu correo electrónico ha sido cambiado a <%= @resource.email %>.</p>
+<% end %>

@@ -1,0 +1,6 @@
+<div class="section-title">
+<h2>Bienvenido <%= @email %>!</h2>
+</div>
+<p>Puedes confirmar tu cuenta mediante el siguiente enlace:</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
